@@ -4,12 +4,14 @@ use strict;
 use warnings;
 use App::MigrateToTest2V0::Rule::ReplaceUseTestMoreToUseTest2V0;
 use App::MigrateToTest2V0::Rule::ReplaceIsDeeplyToIs;
+use App::MigrateToTest2V0::Rule::ReplaceIsaOkHASHOrArrayToRefOk;
 
 our $VERSION = "0.01";
 
 our @rules = qw(
     App::MigrateToTest2V0::Rule::ReplaceUseTestMoreToUseTest2V0
     App::MigrateToTest2V0::Rule::ReplaceIsDeeplyToIs
+    App::MigrateToTest2V0::Rule::ReplaceIsaOkHASHOrArrayToRefOk
 );
 
 sub apply {
