@@ -5,7 +5,18 @@ use warnings;
 
 our $VERSION = "0.01";
 
+our @rules = qw(
+);
 
+sub apply {
+    my ($class, $doc) = @_;
+
+    for my $rule_class (@rules) {
+        $rule_class->apply($doc);
+    }
+
+    $doc->save($doc->filename);
+}
 
 1;
 __END__
