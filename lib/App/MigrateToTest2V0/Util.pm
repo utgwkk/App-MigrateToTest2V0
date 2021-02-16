@@ -33,7 +33,7 @@ sub get_argument_of_stmt {
 sub get_element_of_list {
     my ($list, $nth) = @_;
 
-    my $elem = $list->schild(0);
+    my $elem = $list->schild(0)->first_token;
     while ($nth > 0) {
         until ($elem->content eq ',' || $elem->content eq ')') {
             $elem = $elem->snext_sibling;
