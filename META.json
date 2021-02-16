@@ -44,6 +44,7 @@
          "requires" : {
             "Carp" : "0",
             "PPI" : "0",
+            "Test::Deep" : "0",
             "perl" : "5.008001"
          }
       },
