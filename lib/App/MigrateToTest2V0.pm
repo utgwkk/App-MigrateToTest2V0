@@ -2,10 +2,6 @@ package App::MigrateToTest2V0;
 use 5.008001;
 use strict;
 use warnings;
-use App::MigrateToTest2V0::Rule::ReplaceUseTestMoreToUseTest2V0;
-use App::MigrateToTest2V0::Rule::ReplaceIsDeeplyToIs;
-use App::MigrateToTest2V0::Rule::ReplaceIsaOkHASHOrArrayToRefOk;
-use App::MigrateToTest2V0::Rule::Translate2ndArgumentOfIsaOkWithArrayRef;
 
 our $VERSION = "0.01";
 
@@ -20,6 +16,7 @@ sub apply {
     my ($class, $doc) = @_;
 
     for my $rule_class (@rules) {
+        eval "require $rule_class";
         $rule_class->apply($doc);
     }
 
