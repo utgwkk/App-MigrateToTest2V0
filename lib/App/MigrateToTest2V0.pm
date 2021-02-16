@@ -10,6 +10,7 @@ our @rules = qw(
     App::MigrateToTest2V0::Rule::ReplaceIsDeeplyToIs
     App::MigrateToTest2V0::Rule::ReplaceIsaOkHASHOrArrayToRefOk
     App::MigrateToTest2V0::Rule::Translate2ndArgumentOfIsaOkWithArrayRef
+    App::MigrateToTest2V0::Rule::AvoidNameConflictWithTestDeep
 );
 
 sub apply {
