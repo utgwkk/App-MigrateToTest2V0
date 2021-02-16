@@ -5,6 +5,7 @@ use warnings;
 use App::MigrateToTest2V0::Rule::ReplaceUseTestMoreToUseTest2V0;
 use App::MigrateToTest2V0::Rule::ReplaceIsDeeplyToIs;
 use App::MigrateToTest2V0::Rule::ReplaceIsaOkHASHOrArrayToRefOk;
+use App::MigrateToTest2V0::Rule::Translate2ndArgumentOfIsaOkWithArrayRef;
 
 our $VERSION = "0.01";
 
@@ -12,6 +13,7 @@ our @rules = qw(
     App::MigrateToTest2V0::Rule::ReplaceUseTestMoreToUseTest2V0
     App::MigrateToTest2V0::Rule::ReplaceIsDeeplyToIs
     App::MigrateToTest2V0::Rule::ReplaceIsaOkHASHOrArrayToRefOk
+    App::MigrateToTest2V0::Rule::Translate2ndArgumentOfIsaOkWithArrayRef
 );
 
 sub apply {
