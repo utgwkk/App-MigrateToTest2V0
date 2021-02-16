@@ -50,10 +50,10 @@ sub is_function_call {
     my ($token) = @_;
 
     # method call
-    return 0 if $token->previous_sibling && $token->previous_sibling->content eq '->';
+    return 0 if $token->sprevious_sibling && $token->sprevious_sibling->content eq '->';
 
     # subroutine definition
-    return 0 if $token->previous_sibling && $token->previous_sibling->content eq 'sub';
+    return 0 if $token->sprevious_sibling && $token->sprevious_sibling->content eq 'sub';
 
     # hash key
     return 0 if $token->snext_sibling && $token->snext_sibling->content eq '=>';
