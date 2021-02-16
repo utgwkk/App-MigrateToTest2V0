@@ -1,4 +1,4 @@
-use Test::More;
+use Test::More tests => 10;
 use Test::Deep;
 use URI;
 
@@ -20,8 +20,6 @@ is $inst->bag, undef;
 my $url = 'https://example.com/';
 my $uri = URI->new('https://example.com/');
 is $url, $uri;
-
-done_testing;
 
 package Foo;
 
