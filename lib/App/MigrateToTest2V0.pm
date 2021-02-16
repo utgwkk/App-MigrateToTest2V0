@@ -2,10 +2,12 @@ package App::MigrateToTest2V0;
 use 5.008001;
 use strict;
 use warnings;
+use App::MigrateToTest2V0::Rule::ReplaceUseTestMoreToUseTest2V0;
 
 our $VERSION = "0.01";
 
 our @rules = qw(
+    App::MigrateToTest2V0::Rule::ReplaceUseTestMoreToUseTest2V0
 );
 
 sub apply {
