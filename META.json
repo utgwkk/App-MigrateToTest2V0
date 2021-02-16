@@ -45,6 +45,7 @@
             "Carp" : "0",
             "List::Util" : "0",
             "PPI" : "0",
+            "Test2::API" : "0",
             "Test::Deep" : "0",
             "perl" : "5.008001"
          }
