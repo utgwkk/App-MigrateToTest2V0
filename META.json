@@ -45,6 +45,7 @@
             "Carp" : "0",
             "List::Util" : "0",
             "PPI" : "0",
+            "PPIx::Utils" : "0",
             "Test2::API" : "0",
             "Test::Deep" : "0",
             "perl" : "5.008001"
@@ -57,6 +58,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/utgwkk/App-MigrateToTest2V0/issues"
+      },
+      "homepage" : "https://github.com/utgwkk/App-MigrateToTest2V0",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/utgwkk/App-MigrateToTest2V0.git",
+         "web" : "https://github.com/utgwkk/App-MigrateToTest2V0"
+      }
+   },
    "version" : "0.01",
    "x_serialization_backend" : "JSON::PP version 4.02",
    "x_static_install" : 1
