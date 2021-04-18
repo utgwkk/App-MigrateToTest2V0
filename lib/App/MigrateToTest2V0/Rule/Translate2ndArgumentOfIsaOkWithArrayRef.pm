@@ -2,7 +2,7 @@ package App::MigrateToTest2V0::Rule::Translate2ndArgumentOfIsaOkWithArrayRef;
 use strict;
 use warnings;
 use parent 'App::MigrateToTest2V0::Rule';
-use App::MigrateToTest2V0::Util;
+use PPIx::Utils qw(parse_arg_list);
 
 sub apply {
     my ($class, $doc) = @_;
@@ -14,7 +14,7 @@ sub apply {
     return unless $stmts;
 
     for my $stmt (@$stmts) {
-        my $second_arg = App::MigrateToTest2V0::Util::get_argument_of_stmt($stmt, 1);
+        my $second_arg = (parse_arg_list($stmt->first_token))[1]->[0];
         next unless $second_arg;
 
         my $first_paren = PPI::Token::Structure->new('[');

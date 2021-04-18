@@ -2,7 +2,6 @@ package App::MigrateToTest2V0::Rule::AvoidNameConflictWithTestDeep;
 use strict;
 use warnings;
 use parent 'App::MigrateToTest2V0::Rule';
-use App::MigrateToTest2V0::Util;
 use PPIx::Utils qw(is_function_call);
 use List::Util qw(any);
 use Test::Deep ();

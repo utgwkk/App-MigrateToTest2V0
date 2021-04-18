@@ -1,7 +1,7 @@
 package Test2::Plugin::Wrap2ndArgumentOfFailedCompareTestWithString;
 use strict;
 use warnings;
-use App::MigrateToTest2V0::Util;
+use PPIx::Utils qw(parse_arg_list);
 use PPI;
 use Test2::API qw(
     test2_add_callback_post_load
@@ -38,7 +38,7 @@ sub listener {
     });
     return unless $stmt;
 
-    my $second_arg = App::MigrateToTest2V0::Util::get_argument_of_stmt($stmt, 1);
+    my $second_arg = (parse_arg_list($stmt->first_token))[1]->[0];
     return unless $second_arg;
 
     # A -> string(A)
