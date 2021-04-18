@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use parent 'App::MigrateToTest2V0::Rule';
 use App::MigrateToTest2V0::Util;
+use PPIx::Utils qw(is_function_call);
 use List::Util qw(any);
 use Test::Deep ();
 use constant TEST_DEEP_EXPORTS => [@Test::Deep::EXPORT];
@@ -23,7 +24,7 @@ sub apply {
     $tokens ||= [];
 
     for my $token (@$tokens) {
-        next unless App::MigrateToTest2V0::Util::is_function_call($token);
+        next unless is_function_call($token);
         $token->set_content('Test::Deep::' . $token->content);
     }
 
