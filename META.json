@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Migrate your tests from Test::More to Test2::V0",
    "author" : [
       "utgwkk <utagawakiki@gmail.com>"
    ],
