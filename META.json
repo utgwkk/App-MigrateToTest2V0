@@ -49,6 +49,7 @@
             "PPIx::Utils" : "0",
             "Test2::API" : "0",
             "Test::Deep" : "0",
+            "parent" : "0",
             "perl" : "5.008001"
          }
       },

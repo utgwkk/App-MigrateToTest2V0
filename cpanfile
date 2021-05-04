@@ -1,4 +1,5 @@
 requires 'perl', '5.008001';
+requires 'parent';
 requires 'Carp';
 requires 'File::Temp';
 requires 'PPI';
