@@ -2,6 +2,8 @@ Revision history for Perl extension App-MigrateToTest2V0
 
 {{$NEXT}}
 
+    - No changes since 0.01_02
+
 0.01_02 2021-05-04T05:50:28Z
 
     - Don't use `system()` on test
