@@ -1,5 +1,6 @@
 requires 'perl', '5.008001';
 requires 'Carp';
+requires 'File::Temp';
 requires 'PPI';
 requires 'PPIx::Utils';
 requires 'Test::Deep';
