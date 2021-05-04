@@ -2,10 +2,18 @@ use strict;
 use warnings;
 use Test::More;
 
-use App::MigrateToTest2V0;
+use App::MigrateToTest2V0::CLI;
+use App::Prove;
 use File::Temp ();
 use FindBin;
 use PPI;
+
+sub prove {
+    my (@args) = @_;
+    my $prove = App::Prove->new;
+    $prove->process_args(@args);
+    return $prove->run;
+}
 
 # prepare test script
 my $fh = File::Temp->new;
@@ -17,14 +25,15 @@ my $test_content = do {
     $content;
 };
 $fh->print($test_content);
+$fh->flush;
 
 # migrate to Test2::V0
-system("$FindBin::Bin/../script/migrate-to-test2-v0", $fh->filename);
+App::MigrateToTest2V0::CLI->process($fh->filename);
 
 {
     local $ENV{PERL5OPT} = '-MTest2::Plugin::Wrap2ndArgumentOfFailedCompareTestWithString';
-    isnt system('prove', $fh->filename), 0;
+    ok ! prove($fh->filename);
 }
-is system('prove', $fh->filename), 0;
+ok prove($fh->filename);
 
 done_testing;
