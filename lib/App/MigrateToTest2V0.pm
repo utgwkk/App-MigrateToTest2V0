@@ -31,15 +31,20 @@ __END__
 
 =head1 NAME
 
-App::MigrateToTest2V0 - It's new $module
+App::MigrateToTest2V0 - Backend of migrate-to-test2-v0
 
 =head1 SYNOPSIS
 
     use App::MigrateToTest2V0;
+    use PPI;
+    
+    my $doc = PPI::Document->new('foo.t');
+    App::MigrateToTest2V0->process($doc);
+    $doc->save($doc->filename);
 
 =head1 DESCRIPTION
 
-App::MigrateToTest2V0 is ...
+App::MigrateToTest2V0 is a backend module of L<migrate-to-test2-v0>.
 
 =head1 LICENSE
 
