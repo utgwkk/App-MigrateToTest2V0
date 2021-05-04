@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 use Test::More;
 
 my $inst = Inst->new('foo');
