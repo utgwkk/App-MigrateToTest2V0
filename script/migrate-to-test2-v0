@@ -11,7 +11,8 @@ sub process {
     die "$filename not found" unless -e $filename;
 
     my $doc = PPI::Document->new($filename);
-    App::MigrateToTest2V0->apply($doc);
+    my $migrated_doc = App::MigrateToTest2V0->apply($doc);
+    $migrated_doc->save($migrated_doc->filename);
 }
 
 1;
