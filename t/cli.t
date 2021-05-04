@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use App::MigrateToTest2V0::CLI;
 use File::Temp;
 use FindBin;
 use Test::More;
@@ -15,6 +16,8 @@ my $test_content = do {
 };
 $fh->print($test_content);
 
-is system("$FindBin::Bin/../script/migrate-to-test2-v0", $fh->filename), 0;
+App::MigrateToTest2V0::CLI->process($fh->filename);
+
+pass 'CLI run successfully';
 
 done_testing;
