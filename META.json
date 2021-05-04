@@ -44,6 +44,7 @@
          "requires" : {
             "Carp" : "0",
             "List::Util" : "0",
+            "Module::Loader" : "0",
             "PPI" : "0",
             "PPIx::Utils" : "0",
             "Test2::API" : "0",
