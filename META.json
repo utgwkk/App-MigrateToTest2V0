@@ -43,6 +43,7 @@
       "runtime" : {
          "requires" : {
             "Carp" : "0",
+            "File::Temp" : "0",
             "List::Util" : "0",
             "PPI" : "0",
             "PPIx::Utils" : "0",
