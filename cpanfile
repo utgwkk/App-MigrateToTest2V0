@@ -12,5 +12,6 @@ on 'test' => sub {
     requires 'FindBin';
     requires 'Test::More', '0.98';
     requires 'Test::Base::Less';
+    requires 'Test2::V0';
 };
 
