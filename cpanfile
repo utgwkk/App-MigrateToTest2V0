@@ -1,6 +1,7 @@
 requires 'perl', '5.008001';
 requires 'Carp';
 requires 'List::Util';
+requires 'Module::Loader';
 requires 'PPI';
 requires 'PPIx::Utils';
 requires 'Test::Deep';
