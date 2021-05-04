@@ -72,7 +72,7 @@
          "web" : "https://github.com/utgwkk/App-MigrateToTest2V0"
       }
    },
-   "version" : "0.01",
+   "version" : "0.01_01",
    "x_serialization_backend" : "JSON::PP version 4.02",
    "x_static_install" : 1
 }
