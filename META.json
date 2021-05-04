@@ -54,6 +54,7 @@
       },
       "test" : {
          "requires" : {
+            "App::Prove" : "0",
             "FindBin" : "0",
             "Test::Base::Less" : "0",
             "Test::More" : "0.98"
