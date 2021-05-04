@@ -21,7 +21,7 @@ sub apply {
         $rule_class->apply($doc);
     }
 
-    $doc->save($doc->filename);
+    return $doc;
 }
 
 1;
