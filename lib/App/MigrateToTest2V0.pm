@@ -2,18 +2,22 @@ package App::MigrateToTest2V0;
 use 5.008001;
 use strict;
 use warnings;
-use Module::Loader;
 
 our $VERSION = "0.01";
 
-my $loader = Module::Loader->new;
-our @rules = $loader->find_modules('App::MigrateToTest2V0::Rule');
+our @rules = qw(
+    App::MigrateToTest2V0::Rule::ReplaceUseTestMoreToUseTest2V0
+    App::MigrateToTest2V0::Rule::ReplaceIsDeeplyToIs
+    App::MigrateToTest2V0::Rule::ReplaceIsaOkHASHOrArrayToRefOk
+    App::MigrateToTest2V0::Rule::Translate2ndArgumentOfIsaOkWithArrayRef
+    App::MigrateToTest2V0::Rule::AvoidNameConflictWithTestDeep
+);
 
 sub apply {
     my ($class, $doc) = @_;
 
     for my $rule_class (@rules) {
-        $loader->load($rule_class);
+        eval "require $rule_class";
         $rule_class->apply($doc);
     }
 
